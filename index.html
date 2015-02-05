@@ -39,6 +39,9 @@
               
               function createHtml (data) {
                 console.log("createHtml function fired");
+                for (var i = 0; i <data.length; i++) {
+                  console.log(data[i])
+                }
                 
               }
               
@@ -49,7 +52,8 @@
                   dataType: 'jsonp',
                   success: function(data) {
                     console.log("data has been loaded from instagram");
-                    console.log(data);
+                    var allPhotos = json.data;
+                    console.log(allPhotos);
                     createHtml(data);
                   },
                   error: function(error) {
